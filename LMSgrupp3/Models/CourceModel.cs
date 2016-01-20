@@ -9,6 +9,10 @@ namespace LMSgrupp3.Models
     public class CourceModel
     {
         [Required]
+        [Key]
+        public int Id { get; set; }
+
+        [Required]
         public string Name { get; set; }
 
         [Required]
