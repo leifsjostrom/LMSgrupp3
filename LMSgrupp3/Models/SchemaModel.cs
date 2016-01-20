@@ -9,6 +9,10 @@ namespace LMSgrupp3.Models
     public class SchemaModel
     {
         [Required]
+        [Key]
+        public int Id { get; set; }
+
+        [Required]
         public TeacherModel Teacher { get; set; }
 
         [Required]
