@@ -35,5 +35,7 @@ namespace LMSgrupp3.Models
         public System.Data.Entity.DbSet<LMSgrupp3.Models.StudentModel> StudentModels { get; set; }
 
         public System.Data.Entity.DbSet<LMSgrupp3.Models.CourceModel> CourceModels { get; set; }
+
+        public System.Data.Entity.DbSet<LMSgrupp3.Models.FileModel> FileModels { get; set; }
     }
 }
