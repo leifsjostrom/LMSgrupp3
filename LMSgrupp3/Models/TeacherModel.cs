@@ -9,6 +9,10 @@ namespace LMSgrupp3.Models
     public class TeacherModel
     {
         [Required]
+        [Key]
+        public string EmplymentNumber { get; set; }
+
+        [Required]
         public string Name { get; set; }
 
         [Required]
