@@ -19,7 +19,7 @@ namespace LMSgrupp3.Models
         public string Subject { get; set; }
 
         [Required]
-        public TeacherModel Teacher { get; set; }
+        public DateTime Date { get; set; }
 
         [Required]
         public CourceModel Cource { get; set; }
