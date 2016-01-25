@@ -165,9 +165,11 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\StudentModelsController.cs" />
     <Compile Include="Controllers\TeacherModelsController.cs" />
+    <Compile Include="DataConnection\StudentContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CourceModel.cs" />
     <Compile Include="Models\FileModel.cs" />
