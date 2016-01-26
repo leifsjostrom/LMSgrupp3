@@ -169,6 +169,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201601251330401_init.cs" />
+    <Compile Include="Migrations\201601251330401_init.Designer.cs">
+      <DependentUpon>201601251330401_init.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\CourceModel.cs" />
@@ -180,6 +184,7 @@
     <Compile Include="Models\TeacherModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Views\SchemaModelsController.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -257,6 +262,11 @@
     <Content Include="Views\FileModels\Details.cshtml" />
     <Content Include="Views\FileModels\Edit.cshtml" />
     <Content Include="Views\FileModels\Index.cshtml" />
+    <Content Include="Views\SchemaModels\Create.cshtml" />
+    <Content Include="Views\SchemaModels\Delete.cshtml" />
+    <Content Include="Views\SchemaModels\Details.cshtml" />
+    <Content Include="Views\SchemaModels\Edit.cshtml" />
+    <Content Include="Views\SchemaModels\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -268,6 +278,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201601251330401_init.resx">
+      <DependentUpon>201601251330401_init.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
