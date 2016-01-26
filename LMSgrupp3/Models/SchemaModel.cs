@@ -15,14 +15,13 @@ namespace LMSgrupp3.Models
         public int Id { get; set; }
 
         [Required]
-        public string TeacherEmplymentNumber { get; set; }
-        [ForeignKey("TeacherEmplymentNumber")]
+        public string TeacherId { get; set; }
+        [ForeignKey("TeacherId")]
         public virtual TeacherModel Teacher { get; set; }
 
         [Required]
+        public virtual ICollection<CourceModel> Cources { get; set; }
         public int CourceId { get; set; }
-        [ForeignKey("CourceId")]
-        public CourceModel Cource { get; set; }
 
         [Required]
         public string Location { get; set; }

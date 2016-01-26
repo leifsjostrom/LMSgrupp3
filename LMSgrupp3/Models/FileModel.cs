@@ -23,12 +23,15 @@ namespace LMSgrupp3.Models
         public DateTime Date { get; set; }
 
         [Required]
-        //public CourceModel Cource { get; set; }
-        //[ForeignKey("CourceId")]
+        public bool Shared { get; set; }
+
+        [Required]
+        public virtual ICollection<CourceModel> Cources { get; set; }
         public int CourceId { get; set; }
 
         [Required]
-        public bool Shared { get; set; }
+        public virtual ICollection<StudentModel> Students { get; set; }
+        public string StudentNumber { get; set; }
 
     }
 }
