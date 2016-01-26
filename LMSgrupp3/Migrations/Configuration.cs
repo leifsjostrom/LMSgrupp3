@@ -43,7 +43,7 @@ namespace LMSgrupp3.Migrations
                 {
                     Id = 1,
                     Name = "Datavetenskap grundkurs",
-                    Teacher = null,
+                    TeacherId  = "1001",
                     Students = null
                 }
                 );
@@ -56,7 +56,7 @@ namespace LMSgrupp3.Migrations
                     Name = "Inlämingsuppgift 1",
                     Subject = "Problembeskrivning",
                     Shared = true,
-                    Cource = null,
+                    CourceId  = 1,
                     Date = DateTime.Now
                 }
             );

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LMSgrupp3.Models
 {
@@ -23,6 +24,8 @@ namespace LMSgrupp3.Models
 
         [Required]
         public CourceModel Cource { get; set; }
+        [ForeignKey("CourceId")]
+        public int CourceId { get; set; }
 
         [Required]
         public bool Shared { get; set; }

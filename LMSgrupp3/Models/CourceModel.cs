@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LMSgrupp3.Models
 {
@@ -16,10 +17,14 @@ namespace LMSgrupp3.Models
         public string Name { get; set; }
 
         [Required]
+        public string TeacherId { get; set; }
+        [ForeignKey("TeacherId")]
         public TeacherModel Teacher { get; set; }
 
         [Required]
         public List<StudentModel> Students { get; set; }
+        [ForeignKey("StudentNumber")]
+        public string StudentNumber { get; set; }
 
     }
 }
