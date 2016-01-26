@@ -13,9 +13,11 @@ namespace LMSgrupp3.Models
         public int Id { get; set; }
 
         [Required]
-        public TeacherModel Teacher { get; set; }
+        public string TeacherEmplymentNumber { get; set; }
+        public virtual TeacherModel Teacher { get; set; }
 
         [Required]
+        public int CourceId { get; set; }
         public CourceModel Cource { get; set; }
 
         [Required]

@@ -61,6 +61,19 @@ namespace LMSgrupp3.Migrations
                 }
             );
             context.SaveChanges();
+
+
+            context.Schemas.AddOrUpdate(
+                new SchemaModel
+                {
+                    CourceId  = 1,
+                    Id = 101,
+                    TeacherEmplymentNumber = "1001",
+                    StartDate = DateTime.Now,
+                    EndDate  = DateTime.Now,
+                    Location = "Aula"
+                }
+            );
         }
     }
 }
