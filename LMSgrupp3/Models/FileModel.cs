@@ -23,8 +23,8 @@ namespace LMSgrupp3.Models
         public DateTime Date { get; set; }
 
         [Required]
-        public CourceModel Cource { get; set; }
-        [ForeignKey("CourceId")]
+        //public CourceModel Cource { get; set; }
+        //[ForeignKey("CourceId")]
         public int CourceId { get; set; }
 
         [Required]

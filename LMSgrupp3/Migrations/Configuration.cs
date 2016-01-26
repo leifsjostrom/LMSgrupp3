@@ -24,7 +24,7 @@ namespace LMSgrupp3.Migrations
                     Adress = "Guldgatan 45",
                     Town = "Umea",
                     ZipCode = "901 56",
-                    Email ="AnNord@yahoo.com"
+                    Email = "AnNord@yahoo.com"
                 },
                 new TeacherModel
                 {
@@ -43,7 +43,7 @@ namespace LMSgrupp3.Migrations
                 {
                     Id = 1,
                     Name = "Datavetenskap grundkurs",
-                    TeacherId  = "1001",
+                    TeacherId = "1001",
                     Students = null
                 }
                 );
@@ -56,7 +56,7 @@ namespace LMSgrupp3.Migrations
                     Name = "Inlämingsuppgift 1",
                     Subject = "Problembeskrivning",
                     Shared = true,
-                    CourceId  = 1,
+                    CourceId = 1,
                     Date = DateTime.Now
                 }
             );
@@ -66,11 +66,11 @@ namespace LMSgrupp3.Migrations
             context.Schemas.AddOrUpdate(
                 new SchemaModel
                 {
-                    CourceId  = 1,
+                    CourceId = 1,
                     Id = 101,
                     TeacherEmplymentNumber = "1001",
                     StartDate = DateTime.Now,
-                    EndDate  = DateTime.Now,
+                    EndDate = DateTime.Now,
                     Location = "Aula"
                 }
             );

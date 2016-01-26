@@ -22,8 +22,7 @@ namespace LMSgrupp3.Models
         public TeacherModel Teacher { get; set; }
 
         [Required]
-        public List<StudentModel> Students { get; set; }
-        [ForeignKey("StudentNumber")]
+        public virtual ICollection<StudentModel> Students { get; set; }
         public string StudentNumber { get; set; }
 
     }
