@@ -74,6 +74,30 @@ namespace LMSgrupp3.Migrations
                     Location = "Aula"
                 }
             );
+
+            context.Students.AddOrUpdate
+                (
+                new StudentModel
+                {
+                    StudentNumber = "1001",
+                    Name = "Arne Arg",
+                    Email = "",
+                    Adress = "",
+                    Town = "",
+                    ZipCode = "",
+                    FileId = 0
+                },
+                new StudentModel
+                {
+                    StudentNumber = "1002",
+                    Name = "Bea Borg",
+                    Email = "",
+                    Adress = "",
+                    Town = "",
+                    ZipCode = "",
+                    FileId = 1
+                }
+                );
         }
     }
 }

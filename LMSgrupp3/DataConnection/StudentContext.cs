@@ -14,5 +14,6 @@ namespace LMSgrupp3.DataConnection
         public DbSet<Models.CourceModel> Cources { get; set; }
         public DbSet<Models.FileModel> Files { get; set; }
         public DbSet<Models.SchemaModel> Schemas { get; set; }
+        public DbSet<Models.StudentModel> Students { get; set; }
     }
 }
