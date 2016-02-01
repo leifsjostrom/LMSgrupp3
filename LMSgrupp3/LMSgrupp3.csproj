@@ -188,6 +188,10 @@
     <Compile Include="Views\SchemaModelsController.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\aspnet-LMSgrupp3-20160119113014.mdf" />
+    <Content Include="App_Data\aspnet-LMSgrupp3-20160119113014_log.ldf">
+      <DependentUpon>aspnet-LMSgrupp3-20160119113014.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
@@ -270,7 +274,6 @@
     <Content Include="Views\SchemaModels\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Files\" />
   </ItemGroup>
   <ItemGroup>
