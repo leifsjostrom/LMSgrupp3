@@ -7,17 +7,20 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using LMSgrupp3.Models;
+using LMSgrupp3.Repository;
+
 
 namespace LMSgrupp3.Controllers
 {
     public class StudentModelsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        private StudentRepository repo = new StudentRepository();
 
         // GET: StudentModels
         public ActionResult Index()
         {
-            return View(db.StudentModels.ToList());
+            return View(repo.ShowAll().ToList());
         }
 
         // GET: StudentModels/Details/5
@@ -50,8 +53,9 @@ namespace LMSgrupp3.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.StudentModels.Add(studentModel);
-                db.SaveChanges();
+                repo.Create(studentModel);
+                //db.StudentModels.Add(studentModel);
+                //db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
