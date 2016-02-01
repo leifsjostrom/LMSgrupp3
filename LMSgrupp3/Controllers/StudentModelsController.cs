@@ -51,13 +51,16 @@ namespace LMSgrupp3.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "StudentNumber,Name,Adress,Town,ZipCode,Email")] StudentModel studentModel)
         {
-            if (ModelState.IsValid)
-            {
-                repo.Create(studentModel);
-                //db.StudentModels.Add(studentModel);
-                //db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+            repo.Create(studentModel);
+
+
+            //if (ModelState.IsValid)
+            //{
+            //    repo.Create(studentModel);
+            //    //db.StudentModels.Add(studentModel);
+            //    //db.SaveChanges();
+            //    return RedirectToAction("Index");
+            //}
 
             return View(studentModel);
         }
