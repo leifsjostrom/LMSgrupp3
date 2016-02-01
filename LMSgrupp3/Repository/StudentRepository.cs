@@ -27,21 +27,22 @@ namespace LMSgrupp3.Repository
         public bool Create(StudentModel student)
         // Method to create student in db, takes studentModel as argument
         {
-            //List<String> regs = db.Students.Select(sm => sm.reg).ToList();
-            //if (!regs.Contains(student.StudentNumber))
-
-            //vehicle.ID = db.Vehicles.Count() + 1;
-            try {
-            db.Students.Add(student);
-            db.SaveChanges();
-            }
-            catch (Exception ex)
+            List<String> regs = db.Students.Select(sm => sm.StudentNumber).ToList();
+            if (!regs.Contains(student.StudentNumber))
             {
-                string innerex = ex.InnerException.Message;
-                string msg = ex.Message;
+                //vehicle.ID = db.Vehicles.Count() + 1;
+                try
+                {
+                    db.Students.Add(student);
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    string msg = ex.Message;
+                }
+                return true;
             }
-            return true;
-            
+            return false;
         }
 
 
