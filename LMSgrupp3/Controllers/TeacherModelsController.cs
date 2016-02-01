@@ -7,17 +7,20 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using LMSgrupp3.Models;
+using LMSgrupp3.Repository;
+
 
 namespace LMSgrupp3.Controllers
 {
     public class TeacherModelsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        private StudentRepository repo = new StudentRepository();
 
         // GET: TeacherModels
         public ActionResult Index()
         {
-            return View(db.TeacherModels.ToList());
+            return View(repo.ShowAllTeachers());
         }
 
         // GET: TeacherModels/Details/5
@@ -48,12 +51,14 @@ namespace LMSgrupp3.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "EmplymentNumber,Name,Adress,Town,ZipCode,Email")] TeacherModel teacherModel)
         {
-            if (ModelState.IsValid)
-            {
-                db.TeacherModels.Add(teacherModel);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+            repo.Create(teacherModel);
+
+            //if (ModelState.IsValid)
+            //{
+            //    repo.TeacherModels.Add(teacherModel);
+            //    repo.SaveChanges();
+            //    return RedirectToAction("Index");
+            //}
 
             return View(teacherModel);
         }

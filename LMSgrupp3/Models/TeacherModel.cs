@@ -30,7 +30,6 @@ namespace LMSgrupp3.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Required]
         public virtual ICollection<CourceModel> Cources { get; set; }
         public int CourceId { get; set; }
     }
