@@ -29,8 +29,7 @@ namespace LMSgrupp3.Models
         [Display(Name = "Email")]
         public string Email { get; set; }
 
-        [Required]
-        public virtual ICollection<FileModel > Files { get; set; }
+        public virtual ICollection<FileModel> Files { get; set; }
         public int FileId { get; set; }
     }
 }
