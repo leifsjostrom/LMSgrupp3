@@ -14,6 +14,19 @@ namespace LMSgrupp3.Repository
     {
         private StudentContext db = new StudentContext();
 
+
+        public StudentModel FindById(string id)
+        //Finds and returns a specific vehicle by ID
+        {
+            List<string> ids = db.Students.Select(s => s.StudentNumber).ToList();
+            if (ids.Contains(id))
+            {
+                var query = db.Students.Where(s => s.StudentNumber == id).First();
+                return query;
+            }
+            else { return null; }
+        }
+
         public List<StudentModel> ShowAll()
         //Returns a list of all students
         {
@@ -43,6 +56,18 @@ namespace LMSgrupp3.Repository
             return false;
         }
 
+        public TeacherModel FindByEmpNo(string id)
+        //Finds and returns a specific teacher by EmplymentNumber
+        {
+            List<string> ids = db.Teachers.Select(s => s.EmplymentNumber).ToList();
+            if (ids.Contains(id))
+            {
+                var query = db.Teachers.Where(s => s.EmplymentNumber == id).First();
+                return query;
+            }
+            else { return null; }
+        }
+
         public List<TeacherModel> ShowAllTeachers()
         {
             var query = db.Teachers;
@@ -69,5 +94,12 @@ namespace LMSgrupp3.Repository
             return false;
         }
 
+
+        public List<SchemaModel> ShowAllSchemas()
+        //Returns a list of all schemas
+        {
+            var query = db.Schemas;
+            return query.ToList();
+        }
     }
 }

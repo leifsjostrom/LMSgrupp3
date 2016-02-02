@@ -16,11 +16,9 @@ namespace LMSgrupp3.Models
         [Required]
         public string Name { get; set; }
 
-        [Required]
         public TeacherModel Teacher { get; set; }
         public string TeacherId { get; set; }
 
-        [Required]
         public virtual ICollection<StudentModel> Students { get; set; }
         public string StudentNumber { get; set; }
 

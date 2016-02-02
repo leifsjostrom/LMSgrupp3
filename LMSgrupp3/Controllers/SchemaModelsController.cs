@@ -6,20 +6,20 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using LMSgrupp3.DataConnection;
 using LMSgrupp3.Models;
 using LMSgrupp3.Repository;
 
-namespace LMSgrupp3.Views
+namespace LMSgrupp3.Controllers
 {
     public class SchemaModelsController : Controller
     {
-        private StudentContext repo = new StudentContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
+        private StudentRepository repo = new StudentRepository();
 
         // GET: SchemaModels
         public ActionResult Index()
         {
-            return View(repo.Schemas.ToList());
+            return View(db.CourceModels.ToList());
         }
 
         // GET: SchemaModels/Details/5
@@ -29,7 +29,7 @@ namespace LMSgrupp3.Views
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SchemaModel schemaModel = repo.Schemas.Find(id);
+            SchemaModel schemaModel = db.SchemaModels.Find(id);
             if (schemaModel == null)
             {
                 return HttpNotFound();
@@ -52,8 +52,8 @@ namespace LMSgrupp3.Views
         {
             if (ModelState.IsValid)
             {
-                repo.Schemas.Add(schemaModel);
-                repo.SaveChanges();
+                db.SchemaModels.Add(schemaModel);
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -67,7 +67,7 @@ namespace LMSgrupp3.Views
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SchemaModel schemaModel = repo.Schemas.Find(id);
+            SchemaModel schemaModel = db.SchemaModels.Find(id);
             if (schemaModel == null)
             {
                 return HttpNotFound();
@@ -84,8 +84,8 @@ namespace LMSgrupp3.Views
         {
             if (ModelState.IsValid)
             {
-                repo.Entry(schemaModel).State = EntityState.Modified;
-                repo.SaveChanges();
+                db.Entry(schemaModel).State = EntityState.Modified;
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(schemaModel);
@@ -98,7 +98,7 @@ namespace LMSgrupp3.Views
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            SchemaModel schemaModel = repo.Schemas.Find(id);
+            SchemaModel schemaModel = db.SchemaModels.Find(id);
             if (schemaModel == null)
             {
                 return HttpNotFound();
@@ -111,19 +111,20 @@ namespace LMSgrupp3.Views
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            SchemaModel schemaModel = repo.Schemas.Find(id);
-            repo.Schemas.Remove(schemaModel);
-            repo.SaveChanges();
+            SchemaModel schemaModel = db.SchemaModels.Find(id);
+            db.SchemaModels.Remove(schemaModel);
+            db.SaveChanges();
             return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing)
-            {
-                repo.Dispose();
-            }
-            base.Dispose(disposing);
+            // Todo  implementering
+            //if (disposing)
+            //{
+            //    db.Dispose();
+            //}
+            //base.Dispose(disposing);
         }
     }
 }
