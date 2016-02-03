@@ -78,7 +78,7 @@ namespace LMSgrupp3.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name")] CourceModel courceModel)
+        public ActionResult Edit([Bind(Include = "Id,Name,TeacherId")] CourceModel courceModel)
         {
             if (ModelState.IsValid)
             {

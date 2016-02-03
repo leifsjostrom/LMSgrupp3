@@ -50,10 +50,11 @@ namespace LMSgrupp3.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name,Subject,Shared")] FileModel fileModel)
         {
+            fileModel.Id = 1;
             fileModel.CourceId = 1;
-            fileModel.Date = DateTime.Now;
-            fileModel.Students = null;
+            fileModel.Cources = new List<CourceModel>();
             fileModel.StudentNumber = "1001";
+            fileModel.Students = new List<StudentModel>();
 
             repo.Create(fileModel);
 
