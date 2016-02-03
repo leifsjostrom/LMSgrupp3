@@ -48,13 +48,8 @@ namespace LMSgrupp3.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Location,StartDate,EndDate")] SchemaModel schemaModel)
+        public ActionResult Create([Bind(Include = "Id,Location,StartDate,EndDate,TeacherId,CourceId")] SchemaModel schemaModel)
         {
-            schemaModel.EndDate = DateTime.Now;
-            schemaModel.StartDate = DateTime.Now;
-            schemaModel.TeacherId = "1001";
-            schemaModel.CourceId = 1;
-
             repo.Create(schemaModel);
 
             //if (ModelState.IsValid)
@@ -87,7 +82,7 @@ namespace LMSgrupp3.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Location,StartDate,EndDate")] SchemaModel schemaModel)
+        public ActionResult Edit([Bind(Include = "Id,Location,StartDate,EndDate,TeacherId,CourceId")] SchemaModel schemaModel)
         {
             if (ModelState.IsValid)
             {
