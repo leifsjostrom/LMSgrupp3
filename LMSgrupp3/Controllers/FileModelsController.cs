@@ -48,11 +48,9 @@ namespace LMSgrupp3.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,Subject,Shared")] FileModel fileModel)
+        public ActionResult Create([Bind(Include = "Id,Name,Subject,Shared, CourceId")] FileModel fileModel)
         {
             fileModel.Id = 1;
-            fileModel.CourceId = 1;
-            fileModel.Cources = new List<CourceModel>();
             fileModel.StudentNumber = "1001";
             fileModel.Students = new List<StudentModel>();
 
