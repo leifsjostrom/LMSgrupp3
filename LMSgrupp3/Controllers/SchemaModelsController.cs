@@ -50,12 +50,19 @@ namespace LMSgrupp3.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Location,StartDate,EndDate")] SchemaModel schemaModel)
         {
-            if (ModelState.IsValid)
-            {
-                db.SchemaModels.Add(schemaModel);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+            schemaModel.EndDate = DateTime.Now;
+            schemaModel.StartDate = DateTime.Now;
+            schemaModel.TeacherId = "1001";
+            schemaModel.CourceId = 1;
+
+            repo.Create(schemaModel);
+
+            //if (ModelState.IsValid)
+            //{
+            //    db.SchemaModels.Add(schemaModel);
+            //    db.SaveChanges();
+            //    return RedirectToAction("Index");
+            //}
 
             return View(schemaModel);
         }

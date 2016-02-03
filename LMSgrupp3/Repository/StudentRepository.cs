@@ -109,6 +109,25 @@ namespace LMSgrupp3.Repository
             var query = db.Schemas;
             return query.ToList();
         }
+        public bool Create(SchemaModel schema)
+        // Method to create schema in db, takes schemaModel as argument
+        {
+            List<int> regs = db.Files.Select(sm => sm.Id).ToList();
+            if (!regs.Contains(schema.Id))
+            {
+                try
+                {
+                    db.Schemas.Add(schema);
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    string msg = ex.Message;
+                }
+                return true;
+            }
+            return false;
+        }
 
         //***************************************************************************
         // Files
