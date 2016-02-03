@@ -14,6 +14,8 @@ namespace LMSgrupp3.Repository
     {
         private StudentContext db = new StudentContext();
 
+        //***************************************************************************
+        // Students
 
         public StudentModel FindById(string id)
         //Finds and returns a specific vehicle by ID
@@ -56,6 +58,9 @@ namespace LMSgrupp3.Repository
             return false;
         }
 
+        //***************************************************************************
+        // Teacher
+
         public TeacherModel FindByEmpNo(string id)
         //Finds and returns a specific teacher by EmplymentNumber
         {
@@ -95,11 +100,46 @@ namespace LMSgrupp3.Repository
         }
 
 
+        //***************************************************************************
+        // Schemas
+
         public List<SchemaModel> ShowAllSchemas()
         //Returns a list of all schemas
         {
             var query = db.Schemas;
             return query.ToList();
         }
+
+        //***************************************************************************
+        // Files
+
+        public List<FileModel> ShowAllFiles()
+        //Returns a list of all schemas
+        {
+            var query = db.Files;
+            return query.ToList();
+        }
+
+        public bool Create(FileModel file)
+        // Method to create teacher in db, takes fileModel as argument
+        {
+            List<int> regs = db.Files.Select(fm => fm.Id).ToList();
+            if (!regs.Contains(file.Id))
+            {
+                try
+                {
+                    db.Files.Add(file);
+                    db.SaveChanges();
+                }
+                catch (Exception ex)
+                {
+                    string msg = ex.Message;
+                }
+                return true;
+            }
+            return false;
+        }
+
+
     }
 }

@@ -7,17 +7,19 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using LMSgrupp3.Models;
+using LMSgrupp3.Repository;
 
 namespace LMSgrupp3.Controllers
 {
     public class FileModelsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        private StudentRepository repo = new StudentRepository();
 
         // GET: FileModels
         public ActionResult Index()
         {
-            return View(db.FileModels.ToList());
+            return View(repo.ShowAllFiles());
         }
 
         // GET: FileModels/Details/5
@@ -48,12 +50,20 @@ namespace LMSgrupp3.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Name,Subject,Shared")] FileModel fileModel)
         {
-            if (ModelState.IsValid)
-            {
-                db.FileModels.Add(fileModel);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+            fileModel.CourceId = 1;
+            fileModel.Date = DateTime.Now;
+            fileModel.Students = null;
+            fileModel.StudentNumber = "1001";
+
+            repo.Create(fileModel);
+
+            //if (ModelState.IsValid)
+            //{
+                
+            //    db.FileModels.Add(fileModel);
+            //    db.SaveChanges();
+            //    return RedirectToAction("Index");
+            //}
 
             return View(fileModel);
         }
