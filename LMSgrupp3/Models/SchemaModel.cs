@@ -14,12 +14,10 @@ namespace LMSgrupp3.Models
         [Key]
         public int Id { get; set; }
 
-        [Required]
         public string TeacherId { get; set; }
         [ForeignKey("TeacherId")]
         public virtual TeacherModel Teacher { get; set; }
 
-        [Required]
         public virtual ICollection<CourceModel> Cources { get; set; }
         public int CourceId { get; set; }
 

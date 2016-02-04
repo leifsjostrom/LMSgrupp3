@@ -112,7 +112,7 @@ namespace LMSgrupp3.Repository
         public bool Create(SchemaModel schema)
         // Method to create schema in db, takes schemaModel as argument
         {
-            List<int> regs = db.Files.Select(sm => sm.Id).ToList();
+            List<int> regs = db.Schemas.Select(sm => sm.Id).ToList();
             if (!regs.Contains(schema.Id))
             {
                 try
@@ -158,7 +158,6 @@ namespace LMSgrupp3.Repository
             }
             return false;
         }
-
 
     }
 }
