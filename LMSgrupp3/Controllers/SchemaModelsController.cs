@@ -19,7 +19,7 @@ namespace LMSgrupp3.Controllers
         // GET: SchemaModels
         public ActionResult Index()
         {
-            return View(db.CourceModels.ToList());
+            return View(db.SchemaModels.ToList());
         }
 
         // GET: SchemaModels/Details/5
