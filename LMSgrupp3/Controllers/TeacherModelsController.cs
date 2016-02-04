@@ -53,13 +53,6 @@ namespace LMSgrupp3.Controllers
         {
             repo.Create(teacherModel);
 
-            //if (ModelState.IsValid)
-            //{
-            //    repo.TeacherModels.Add(teacherModel);
-            //    repo.SaveChanges();
-            //    return RedirectToAction("Index");
-            //}
-
             return View(teacherModel);
         }
 
