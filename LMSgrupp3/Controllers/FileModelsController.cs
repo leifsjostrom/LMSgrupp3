@@ -52,7 +52,9 @@ namespace LMSgrupp3.Controllers
         {
             fileModel.Id = 1;
             fileModel.StudentNumber = "1001";
-            fileModel.Students = new List<StudentModel>();
+            //fileModel.Students = new List<StudentModel>();
+            //fileModel.Cources = new List<CourceModel>();
+            fileModel.Date = DateTime.Now;
 
             repo.Create(fileModel);
 
@@ -87,7 +89,7 @@ namespace LMSgrupp3.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,Subject,Shared")] FileModel fileModel)
+        public ActionResult Edit([Bind(Include = "Id,Name,Subject,Shared,Date")] FileModel fileModel)
         {
             if (ModelState.IsValid)
             {

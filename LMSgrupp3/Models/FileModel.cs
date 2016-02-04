@@ -25,11 +25,9 @@ namespace LMSgrupp3.Models
         [Required]
         public bool Shared { get; set; }
 
-        [Required]
         public virtual ICollection<CourceModel> Cources { get; set; }
         public int CourceId { get; set; }
 
-        [Required]
         public virtual ICollection<StudentModel> Students { get; set; }
         public string StudentNumber { get; set; }
 
