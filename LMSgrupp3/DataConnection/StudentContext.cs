@@ -16,6 +16,6 @@ namespace LMSgrupp3.DataConnection
         public DbSet<Models.FileModel> Files { get; set; }
         public DbSet<Models.SchemaModel> Schemas { get; set; }
         public DbSet<Models.StudentModel> Students { get; set; }
-        public DbSet<SchemView> ShemView { get; set; }
+        public DbSet<Models.SchemView> ShemView { get; set; }
     }
 }
