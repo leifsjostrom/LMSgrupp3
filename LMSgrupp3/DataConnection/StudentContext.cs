@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
+using LMSgrupp3.Models;
 
 namespace LMSgrupp3.DataConnection
 {
@@ -15,5 +16,6 @@ namespace LMSgrupp3.DataConnection
         public DbSet<Models.FileModel> Files { get; set; }
         public DbSet<Models.SchemaModel> Schemas { get; set; }
         public DbSet<Models.StudentModel> Students { get; set; }
+        public DbSet<SchemView> ShemView { get; set; }
     }
 }
