@@ -50,11 +50,7 @@ namespace LMSgrupp3.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Location,StartDate,EndDate,TeacherId,CourceId")] SchemaModel schemaModel)
         {
-            schemaModel.Id = 1;
-            schemaModel.TeacherId = "1001";
-            schemaModel.StartDate = DateTime.Now;
-            schemaModel.EndDate = DateTime.Now;
-            schemaModel.CourceId = 1;
+            schemaModel.Id = repo.GenerateNewIndex();
 
             repo.Create(schemaModel);
 
