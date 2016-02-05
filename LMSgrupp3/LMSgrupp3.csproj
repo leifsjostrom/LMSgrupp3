@@ -163,6 +163,7 @@
     <Compile Include="Controllers\FileModelsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\SchemViewsController.cs" />
     <Compile Include="Controllers\StudentModelsController.cs" />
     <Compile Include="Controllers\TeacherModelsController.cs" />
     <Compile Include="DataConnection\StudentContext.cs" />
@@ -177,9 +178,9 @@
     <Compile Include="Migrations\201602030801127_ANewInit.Designer.cs">
       <DependentUpon>201602030801127_ANewInit.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201602041224432_init2.cs" />
-    <Compile Include="Migrations\201602041224432_init2.Designer.cs">
-      <DependentUpon>201602041224432_init2.cs</DependentUpon>
+    <Compile Include="Migrations\201602041514171_ANewInit1.cs" />
+    <Compile Include="Migrations\201602041514171_ANewInit1.Designer.cs">
+      <DependentUpon>201602041514171_ANewInit1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -188,6 +189,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\SchemaModel.cs" />
+    <Compile Include="Models\SchemView.cs" />
     <Compile Include="Models\StudentModel.cs" />
     <Compile Include="Models\TeacherModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -281,6 +283,8 @@
     <Content Include="Views\SchemaModels\Details.cshtml" />
     <Content Include="Views\SchemaModels\Edit.cshtml" />
     <Content Include="Views\SchemaModels\Index.cshtml" />
+    <Content Include="Views\SchemViews\Index.cshtml" />
+    <Content Include="Views\SchemViews\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Files\" />
@@ -299,8 +303,8 @@
     <EmbeddedResource Include="Migrations\201602030801127_ANewInit.resx">
       <DependentUpon>201602030801127_ANewInit.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602041224432_init2.resx">
-      <DependentUpon>201602041224432_init2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201602041514171_ANewInit1.resx">
+      <DependentUpon>201602041514171_ANewInit1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
