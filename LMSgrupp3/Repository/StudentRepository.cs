@@ -103,6 +103,13 @@ namespace LMSgrupp3.Repository
         //***************************************************************************
         // Schemas
 
+        public int GenerateNewIndex()
+        {
+            int kalle = db.Schemas.Select(sm => sm.Id).Max();
+            kalle++;
+            return kalle;
+        }
+
         public List<SchemaModel> ShowAllSchemas()
         //Returns a list of all schemas
         {
