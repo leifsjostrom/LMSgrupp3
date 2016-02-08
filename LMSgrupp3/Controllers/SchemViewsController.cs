@@ -27,13 +27,31 @@ namespace LMSgrupp3.Controllers
 
         public ActionResult List()
         {
-            //Session["Teacher"] = false;
-
-            Session["Teacher"] = true;
-            Session["Id"] = "1001";
+            Session["Teacher"] = false;
+            Session["Id"] = "2002";
+            //Session["Teacher"] = true;
+            //Session["Id"] = "1001";
 
             ViewData["Teacher"] = Convert.ToBoolean(Session["Teacher"]);
 
+            string iid=Convert.ToString(Session["Id"]);
+            string nname="";
+            if (Convert.ToBoolean(Session["Teacher"]))
+            {
+                var tn = db.Teachers.Where(s => s.EmplymentNumber == iid);
+                
+                foreach (var ren in tn)
+                { nname = ren.Name; }
+            
+            }
+            else
+            {
+               var sn = db.Students.Where(s=>s.StudentNumber==iid);
+               foreach (var ren in sn)
+               { nname = ren.Name; }
+            }
+
+            ViewData["Name"] = nname;
 
             var schema = new List<SchemView>();
 
@@ -125,9 +143,10 @@ namespace LMSgrupp3.Controllers
         DateTime startweek = Today.AddDays(-1 * (weekday - 1));
         DateTime endweek = Today.AddDays(7-weekday);
 
-        var schemata = db.Schemas.Include(s =>s.Cources).Include(s => s.TeacherId).Where(s=> s.StartDate<=endweek && s.EndDate>=startweek);
-        
-            
+        //var schemata = db.Schemas.Include(s =>s.Cources).Include(s => s.TeacherId).Where(s=> s.StartDate<=endweek && s.EndDate>=startweek);
+
+        var schemata = db.Schemas.Where(s => s.StartDate <= endweek && s.EndDate >= startweek);
+          
 
         foreach (var r in schemata)
         {
@@ -138,15 +157,17 @@ namespace LMSgrupp3.Controllers
             //get student ID
 
             bool incl = false;
+            string Id = Convert.ToString(Session["Id"]);
 
             if (Convert.ToBoolean(Session["Teacher"]))
             {
-                if (Session["Id"] == r.TeacherId) { incl = true; }
+                if (Id == r.TeacherId) { incl = true; }
                       
             }
             else
             {
-                int stid = db.Cources.Where(s => s.Id == r.CourceId && Session["Id"] ==s.StudentNumber).Count();
+                StudentContext dd = new StudentContext();
+                int stid = dd.Cources.Where(s => s.Id == r.CourceId &&  s.StudentNumber==Id).Count();
                 if (stid > 0) { incl = true; }
             }
 
@@ -182,7 +203,8 @@ namespace LMSgrupp3.Controllers
             //SchemView sw = db.SchemViews.Find(foundid);
 
             string sb = "";
-            CourceModel Subj = db.Cources.Find(r.CourceId);
+            StudentContext dc = new StudentContext();
+            CourceModel Subj = dc.Cources.Find(r.CourceId);
              sb = Subj.Name;
 
           

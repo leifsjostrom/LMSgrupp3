@@ -10,14 +10,14 @@
 @if (Convert.ToBoolean(ViewData["Teacher"]) == false)
 {
 
-    <h2>List for student</h2>
+    <h2>List for student  @ViewData["Name"]</h2>
 
 }
 else
 {
 
 
-    <h2>List for teacher</h2>
+    <h2>List for teacher @ViewData["Name"]</h2>
 
 
 }
