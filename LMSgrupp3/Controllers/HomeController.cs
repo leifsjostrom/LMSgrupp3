@@ -22,7 +22,8 @@ namespace LMSgrupp3.Controllers
                LMSgrupp3.Views.FileTransfer ft = new LMSgrupp3.Views.FileTransfer();
                ft.Upload(file);
             }
-            return View();
+            
+            return RedirectToAction("Index");
         }
 
 
@@ -34,7 +35,7 @@ namespace LMSgrupp3.Controllers
                 LMSgrupp3.Views.FileTransfer ft = new LMSgrupp3.Views.FileTransfer();
                 ft.Download(file);
             }
-            return View();
+            return RedirectToAction("Index");
         }
 
         public ActionResult About()
