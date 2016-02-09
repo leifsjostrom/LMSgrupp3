@@ -172,18 +172,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201601281035230_newmig.cs" />
-    <Compile Include="Migrations\201601281035230_newmig.Designer.cs">
-      <DependentUpon>201601281035230_newmig.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602030801127_ANewInit.cs" />
-    <Compile Include="Migrations\201602030801127_ANewInit.Designer.cs">
-      <DependentUpon>201602030801127_ANewInit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602041514171_ANewInit1.cs" />
-    <Compile Include="Migrations\201602041514171_ANewInit1.Designer.cs">
-      <DependentUpon>201602041514171_ANewInit1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\AspNetRoles.cs">
@@ -243,6 +231,7 @@
     <Compile Include="Repository\StudentRepository.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="Controllers\SchemaModelsController.cs" />
+    <Compile Include="Views\FileTransfer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\aspnet-LMSgrupp3-20160119113014.mdf" />
@@ -359,17 +348,6 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201601281035230_newmig.resx">
-      <DependentUpon>201601281035230_newmig.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602030801127_ANewInit.resx">
-      <DependentUpon>201602030801127_ANewInit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602041514171_ANewInit1.resx">
-      <DependentUpon>201602041514171_ANewInit1.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
