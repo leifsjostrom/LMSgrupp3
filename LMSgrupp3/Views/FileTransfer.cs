@@ -20,7 +20,7 @@ namespace LMSgrupp3.Views
                     fs.Flush();
                 }
             }
-            catch (Exception e)Better solution of File download
+            catch (Exception e)
             {
                 string errMsg = e.Message;
             }
