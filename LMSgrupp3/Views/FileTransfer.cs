@@ -12,6 +12,23 @@ namespace LMSgrupp3.Views
         {
             try
             {
+                Stream inStream = file.InputStream;
+
+                using (FileStream fs = File.OpenWrite("C:\\download\\" + file.FileName))
+                {
+                    inStream.CopyTo(fs);
+                    fs.Flush();
+                }
+            }
+            catch (Exception e)Better solution of File download
+            {
+                string errMsg = e.Message;
+            }
+
+
+            /*
+            try
+            {
                 // set the http content type to "APPLICATION/OCTET-STREAM
                 System.Web.HttpContext.Current.Response.ContentType = "APPLICATION/OCTET-STREAM";
 
@@ -31,6 +48,7 @@ namespace LMSgrupp3.Views
             {
                Console.WriteLine(e.Message);
             }
+             */ 
         }
 
 
