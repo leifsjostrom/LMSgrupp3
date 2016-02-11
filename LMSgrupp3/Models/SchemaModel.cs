@@ -5,7 +5,6 @@ using System.Web;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-
 namespace LMSgrupp3.Models
 {
     public class SchemaModel
@@ -24,9 +23,11 @@ namespace LMSgrupp3.Models
         [Required]
         public string Location { get; set; }
 
+        [UIHint("DateTime")] 
         [Required]
         public DateTime  StartDate { get; set; }
 
+        [UIHint("DateTime")] 
         [Required]
         public DateTime EndDate { get; set; }
 
