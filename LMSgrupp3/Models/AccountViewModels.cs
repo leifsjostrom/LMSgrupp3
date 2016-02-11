@@ -1,5 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+//using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.Owin.Security;
+using System;
+using System.Web;
+using LMSgrupp3.Models;
+using System.Web.Mvc;
 
 namespace LMSgrupp3.Models
 {
@@ -63,7 +71,18 @@ namespace LMSgrupp3.Models
     }
 
     public class RegisterViewModel
-    {
+    {/*
+        RoleList = new List<SelectListItem>()
+
+        public string Role { get; set; }
+        public IList<SelectListItem> RoleList { get; set; }
+        
+        */
+        // property used to ... assign when new user... registers
+        public string Name { get; set; }
+        //
+
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
@@ -77,7 +96,7 @@ namespace LMSgrupp3.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        //[Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
 
@@ -96,7 +115,8 @@ namespace LMSgrupp3.Models
 
         [DataType(DataType.Password)]
         [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        //[Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+
         public string ConfirmPassword { get; set; }
 
         public string Code { get; set; }

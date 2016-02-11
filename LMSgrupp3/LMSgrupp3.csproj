@@ -165,9 +165,11 @@
     <Compile Include="Controllers\FileModelsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\SchemViewsController.cs" />
     <Compile Include="Controllers\StudentModelsController.cs" />
     <Compile Include="Controllers\TeacherModelsController.cs" />
+    <Compile Include="CustomFilters\AuthorizeFailed.cs" />
     <Compile Include="DataConnection\StudentContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -186,6 +188,7 @@
     <Compile Include="Models\AspNetUsers.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\CourceModel.cs" />
     <Compile Include="Models\CourceModels.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -338,6 +341,7 @@
     <Content Include="Views\SchemaModels\Index.cshtml" />
     <Content Include="Views\SchemViews\Index.cshtml" />
     <Content Include="Views\SchemViews\List.cshtml" />
+    <Content Include="Views\Shared\AuthorizeFailed.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Files\" />

@@ -9,17 +9,34 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using LMSgrupp3.Models;
+using LMSgrupp3.CustomFilters;
 
 namespace LMSgrupp3.Controllers
 {
+
+
+
     [Authorize]
     public class AccountController : Controller
     {
+
+ 
+
+
+
+
+
+
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
 
+        ApplicationDbContext context;
+
         public AccountController()
         {
+            //***added
+            context = new ApplicationDbContext();
+            //added***
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
@@ -136,10 +153,13 @@ namespace LMSgrupp3.Controllers
 
         //
         // GET: /Account/Register
-        [AllowAnonymous]
+        [AuthLog(Roles = "Teacher")]
+        //[AllowAnonymous]
         public ActionResult Register()
         {
-            return View();
+        ViewBag.Name = new SelectList(context.Roles.ToList(), "Name", "Name");
+        return View();
+
         }
 
         //
@@ -149,12 +169,23 @@ namespace LMSgrupp3.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
+            
+
             if (ModelState.IsValid)
             {
+
+
                 var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+
+                    //Assign Role to user Here
+                    await this.UserManager.AddToRoleAsync(user.Id, model.Name);
+                    //Ends Here
+
+
+
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
