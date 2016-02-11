@@ -16,6 +16,7 @@ namespace LMSgrupp3.Migrations
 
         protected override void Seed(LMSgrupp3.DataConnection.StudentContext context)
         {
+            /*
             context.Teachers.AddOrUpdate(
                 new TeacherModel
                 {
@@ -98,6 +99,9 @@ namespace LMSgrupp3.Migrations
                     FileId = 1
                 }
                 );
+*/
         }
+
     }
+
 }
