@@ -153,12 +153,24 @@ namespace LMSgrupp3.Controllers
 
         //
         // GET: /Account/Register
-        [AuthLog(Roles = "Teacher")]
-        //[AllowAnonymous]
+        //[AuthLog(Roles = "Teacher")]
+        [AllowAnonymous]
         public ActionResult Register()
         {
         ViewBag.Name = new SelectList(context.Roles.ToList(), "Name", "Name");
-        return View();
+
+
+        try
+        {
+            return View();
+        }
+        catch (Exception ex)
+        {
+            ModelState.AddModelError("", "Invalid login attempt.");
+            return View();
+            // to do :log error
+            //return View("Error");
+        }
 
         }
 
