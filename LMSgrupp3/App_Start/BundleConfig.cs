@@ -19,9 +19,14 @@ namespace LMSgrupp3
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/moment").Include(
+            "~/Scripts/moment.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                                  "~/Scripts/bootstrap.js",
+                                  "~/Scripts/bootstrap-datetimepicker.js",
+                                  "~/Scripts/datetimepicker-setup.js",
+                                  "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",

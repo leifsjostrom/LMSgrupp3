@@ -1,3 +1,6 @@
-﻿$(function () {
+﻿
+$('.datepicker').datepicker();
+
+$(function () {
     $(".datefield").datepicker();
 });
