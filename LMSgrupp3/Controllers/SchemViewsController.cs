@@ -27,13 +27,34 @@ namespace LMSgrupp3.Controllers
 
         public ActionResult List()
         {
+
+            string ui = User.Identity.Name;
+            string uui = "";
+
             if (User.IsInRole("Teacher"))
             {
                 Session["Teacher"] = true;
+
+                uui = db.Teachers.Where(s => s.Email == ui).Select(s => s.EmplymentNumber).FirstOrDefault();
+
+
+
             }
-            else { Session["Teacher"] = false; }
+            else
+            {
+                Session["Teacher"] = false;
+                uui = db.Students.Where(s => s.Email == ui).Select(s => s.StudentNumber).FirstOrDefault();
+
+            }
+            Session["Id"] = "1001";
+            if (uui != "") { Session["Id"] = uui; }
+            //if (User.IsInRole("Teacher"))
+            //{
+            //    Session["Teacher"] = true;
+            //}
+            //else { Session["Teacher"] = false; }
             
-                Session["Id"] = "1001";
+            //    Session["Id"] = "1001";
 
             //Session["Teacher"] = true;
             //Session["Id"] = "1001";

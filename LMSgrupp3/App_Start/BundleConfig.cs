@@ -23,10 +23,12 @@ namespace LMSgrupp3
             "~/Scripts/moment.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
+                                  "~/bundles/moment",
                                   "~/Scripts/bootstrap.js",
                                   "~/Scripts/bootstrap-datetimepicker.js",
                                   "~/Scripts/datetimepicker-setup.js",
                                   "~/Scripts/respond.js"));
+                                  
                                   
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
