@@ -27,8 +27,14 @@ namespace LMSgrupp3.Controllers
 
         public ActionResult List()
         {
-            Session["Teacher"] = false;
-            Session["Id"] = "2002";
+            if (User.IsInRole("Teacher"))
+            {
+                Session["Teacher"] = true;
+            }
+            else { Session["Teacher"] = false; }
+            
+                Session["Id"] = "1001";
+
             //Session["Teacher"] = true;
             //Session["Id"] = "1001";
 

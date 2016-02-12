@@ -87,6 +87,7 @@ namespace LMSgrupp3.Controllers
         {
             if (!ModelState.IsValid)
             {
+                //Session["Teacher"]=
                 return View(model);
             }
 
