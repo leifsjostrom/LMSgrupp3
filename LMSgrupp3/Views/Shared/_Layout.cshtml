@@ -48,13 +48,14 @@
                     @*<li>@Html.ActionLink("About", "About", "Home")</li>*@
 
                     <li>@Html.ActionLink("File(Contact)", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("Schema", "Index", "SchemaModels")</li>
+                    <li>@Html.ActionLink("Rooms", "Index", "SchemaModels")</li>
+                    <li>@Html.ActionLink("Schema", "Index", "SchemViews")</li>
                     </ul>
                     @if (ViewContext.HttpContext.User.IsInRole("Teacher"))
                     {
                         
                             <a href="#">@Html.ActionLink("Register   ", "Register", "Account")</a>
-                        <a href="#">@Html.ActionLink("Login", "Login", "Account")</a>
+                            <a href="#">@Html.ActionLink("Login", "Login", "Account")</a>
 
                     }
            
@@ -70,12 +71,6 @@
                 <p>@Html.Partial("_LoginPartial")</p>
             </div>
         </div>
-        
-
-
-
-
-       >
     </div>
 
     @Scripts.Render("~/bundles/jquery")
@@ -85,21 +80,22 @@
     <!--    ADDED for popup-->
     <div id="light" class="white_content">
         <!-- Innehållet för about -->
-        <h2>a b o u t :&nbsp;</h2>
-        <h3>[L] &nbsp;e a r n i n g<br />   [M] a n a g e m e n t<br />  [S] &nbsp;y s t e m   <br /></h3>
-        <h6>version : v0.1</h6>
-        <h3>C r e a t e d  &nbsp;&nbsp;&nbsp;b y:<br />&nbsp;&nbsp;&nbsp;Leif, Kenneth & Slava <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2016</h3>
+        <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a b o u t :&nbsp;</h2>
+        <div id="aboutcenter">
+            <h4>[L] &nbsp;e a r n i n g<br />   &nbsp;&nbsp;&nbsp;[M] a n a g e m e n t<br />  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[S] &nbsp;y s t e m   <br /></h4>
+            <h6>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;version : v0.1</h6>
+            <h4>C r e a t e d  &nbsp;&nbsp;&nbsp;b y:<br />&nbsp;&nbsp;&nbsp;Leif, Kenneth & Slava <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2016</h4>
 <pre>
               . N E T<br />          d e v e l o p e r<br />        T e a m  E f f o r t s
 <!-- <h3>@ViewBag.Message</h3> -->
 </pre>
-        <p>
-            contact us by:<a href="skype:007001002003004"><img src="~/RESOURCES/images/phone_alpha.png" alt="phone" />telephone</a> &nbsp;&nbsp;&nbsp;&nbsp;
-            <a href="mailto:support@garage.csharpdotnetdev.com"><img src="~/RESOURCES/images/mail_alpha.png" alt="phone" />email </a><br />
-        </p>
-        <!-- Innehållet för about -->
-        <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">c l o s e</a>
-
+            <p>
+                contact us by:<a href="skype:007001002003004"><img src="~/RESOURCES/images/phone_alpha.png" alt="phone" />telephone</a> &nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="mailto:support@garage.csharpdotnetdev.com"><img src="~/RESOURCES/images/mail_alpha.png" alt="phone" />email </a><br />
+            </p>
+            <!-- Innehållet för about -->
+            <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">c l o s e</a>
+        </div>
     </div>
     <div id="helpfade" class="black_overlay"></div>
     <!--    # ADDED -->

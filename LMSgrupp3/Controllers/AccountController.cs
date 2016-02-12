@@ -153,8 +153,8 @@ namespace LMSgrupp3.Controllers
 
         //
         // GET: /Account/Register
-        //[AuthLog(Roles = "Teacher")]
-        [AllowAnonymous]
+        [AuthLog(Roles = "Teacher")]
+        //[AllowAnonymous]
         public ActionResult Register()
         {
         ViewBag.Name = new SelectList(context.Roles.ToList(), "Name", "Name");

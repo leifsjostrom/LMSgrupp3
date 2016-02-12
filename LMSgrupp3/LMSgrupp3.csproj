@@ -247,6 +247,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="RESOURCES\images\back.png" />
+    <Content Include="RESOURCES\images\logged_false.png" />
+    <Content Include="RESOURCES\images\logged_true.png" />
+    <Content Include="RESOURCES\images\mail_alpha.png" />
+    <Content Include="RESOURCES\images\phone_alpha.png" />
+    <Content Include="RESOURCES\images\symbol.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <EntityDeploy Include="Models\Model1.edmx">
