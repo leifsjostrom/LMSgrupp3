@@ -27,6 +27,7 @@ namespace LMSgrupp3
                                   "~/Scripts/bootstrap-datetimepicker.js",
                                   "~/Scripts/datetimepicker-setup.js",
                                   "~/Scripts/respond.js"));
+                                  
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
