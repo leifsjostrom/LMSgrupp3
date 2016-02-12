@@ -29,32 +29,97 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("[LMS]", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+ 
             </div>
+
             <div class="navbar-collapse collapse">
+                <!-- added -->
+                <table>
+                    <tr>
+                        <td>
+                            @Html.ActionLink("[LMS]:", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                        </td>
+                    </tr>
+                </table>
+                <!-- o added -->
                 <ul class="nav navbar-nav">
+                                        <li><a href="javascript:void(0)" onclick="document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'">About..</a></li>
                     <li>@Html.ActionLink("Index", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    @*<li>@Html.ActionLink("About", "About", "Home")</li>*@
+
+                    <li>@Html.ActionLink("File(Contact)", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Schema", "Index", "SchemaModels")</li>
+                    </ul>
                     @if (ViewContext.HttpContext.User.IsInRole("Teacher"))
                     {
-                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        
+                            <a href="#">@Html.ActionLink("Register   ", "Register", "Account")</a>
+                        <a href="#">@Html.ActionLink("Login", "Login", "Account")</a>
+
                     }
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
-        </div>
-    </div>
+           
+</div>
+                            </div>
+</div>
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <!-- khan -- <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p> -->
-        </footer>
+
+        <div id="footer" class="navbar-default">
+            <div class="container">
+                <p>@Html.Partial("_LoginPartial")</p>
+            </div>
+        </div>
+        
+
+
+
+
+       >
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+
+    <!--    ADDED for popup-->
+    <div id="light" class="white_content">
+        <!-- Innehållet för about -->
+        <h2>a b o u t :&nbsp;</h2>
+        <h3>[L] &nbsp;e a r n i n g<br />   [M] a n a g e m e n t<br />  [S] &nbsp;y s t e m   <br /></h3>
+        <h6>version : v0.1</h6>
+        <h3>C r e a t e d  &nbsp;&nbsp;&nbsp;b y:<br />&nbsp;&nbsp;&nbsp;Leif, Kenneth & Slava <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2016</h3>
+<pre>
+              . N E T<br />          d e v e l o p e r<br />        T e a m  E f f o r t s
+<!-- <h3>@ViewBag.Message</h3> -->
+</pre>
+        <p>
+            contact us by:<a href="skype:007001002003004"><img src="~/RESOURCES/images/phone_alpha.png" alt="phone" />telephone</a> &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="mailto:support@garage.csharpdotnetdev.com"><img src="~/RESOURCES/images/mail_alpha.png" alt="phone" />email </a><br />
+        </p>
+        <!-- Innehållet för about -->
+        <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">c l o s e</a>
+
+    </div>
+    <div id="helpfade" class="black_overlay"></div>
+    <!--    # ADDED -->
+    <!--    #  H E L P ,  visa en png i overlay... -->
+    <!--    ***** och i samma html dokument    i vårt fall   _layout.cshtml  ha med någonstans... -->
+
+    <div id="help" class="help_content">
+        <img src="/RESOURCES/images/helpmap.png" usemap="#helpmap" border="0">
+        <map name="helpmap">
+            <area shape="polygon" coords="19,44,45,11,87,37,82,76,49,98" href="http://www.trees.com/save.html">
+            <area shape="rect" coords="128,132,241,179" href="http://www.trees.com/furniture.html">
+            <area shape="circle" coords="68,211,35" href="http://www.trees.com/plantations.html">
+        </map>
+        <a href="javascript:void(0)" onclick="document.getElementById('help').style.display='none';document.getElementById('helpfade').style.display='none'">Close</a>
+        <!-- Innehållet -->
+    </div>
+    <div id="fade" class="black_overlay"></div>
+
+
+
+
 </body>
 </html>

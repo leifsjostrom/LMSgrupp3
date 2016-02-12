@@ -22,3 +22,179 @@ select,
 textarea {
     max-width: 280px;
 }
+
+
+textarea {
+    width:200px;height:25px;font-size:25px;float:inherit
+}
+
+ul {
+margin-top:50px;
+}
+
+ul#menu {
+float:right;
+margin-top:0;
+}
+
+
+/*
+.dropv, .dropv ul {padding: 0; margin: 0; list-style: none;}
+.dropv a {display: inline; width: 164px;}
+.dropv li {float: left; padding: 0px 8px 2px 0px;} 
+.dropv li ul {position: absolute; background: black; 
+  padding: 0px 0px 0px 4px; width: 170px; left: -9999px;} 
+.dropv li:hover ul {left: auto; } /* nest list under hovered list items 
+.dropv li ul li a {color: lightgray; text-decoration: none; display: block;}
+.dropv li ul li a:hover {color: black; background:darkgray;}
+*/
+
+pre {
+    border: none !important;
+    background-color: white;
+}
+
+/* change the listing BAR*/
+th {
+    background-color: darkgray;
+}
+
+
+.table a {
+        color: white;
+        /*
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;  
+
+ text-shadow:none;
+            */
+}
+   
+.jumbotron{
+    text-align:center;
+}
+
+.clickhere{
+    text-align:end;
+}
+
+    .black_overlay{
+        display: none;
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        z-index:1001;
+        -moz-opacity: 0.8;
+        opacity:.80;
+        filter: alpha(opacity=78);
+    }
+    .white_content {
+        display: none;
+        position: absolute;
+        top: 25%;
+        left: 25%;
+        width: 480px;
+        height: 500px;
+        padding: 30px;
+        border: 10px solid lightblue;
+        background-color: white;
+        z-index:1002;
+        overflow: auto;
+    }
+
+        .help_content {
+        display: none;
+        position: absolute;
+        top: 10%;
+        left: 2%;
+        width: 1350px;
+        height: 700px;
+        padding: 0px;
+        border: 10px solid lightblue;
+        background-color: black;
+        z-index:1002;
+        overflow: auto;
+    }
+
+    #light a{
+        color:black;
+    }
+
+    /* Sticky footer styles */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+/* Fixed navbar styles */
+body > .container {
+  padding-top: 60px;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body > .container {
+  padding: 60px 15px 0;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+
+/*.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}*/
+
+code {
+  font-size: 80%;
+}
+
+
+
+#footer {
+   background-color: #000000;
+   bottom: 0;
+   height: 60px;
+   position: relative;
+   width: 100%;
+}

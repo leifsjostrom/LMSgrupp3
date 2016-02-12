@@ -16,6 +16,11 @@
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
         </div>
+
+@if (ViewContext.HttpContext.User.IsInRole("Teacher"))
+{
+    <h5>bugalert: for now password must contain all advanced characters...</h5>
+}
     </div>
     <div class="form-group">
         @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
@@ -34,6 +39,7 @@
     <div class="form-group">
         @Html.Label("Select Your Role", new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
+            @*@Html.DropDownListFor(model => model.Role, (SelectList)ViewBag.Name)*@
             @Html.DropDownList("Name")
             @*@Html.DropDownListFor(model => model.Role, Model.RoleList)*@
         </div>
@@ -52,6 +58,8 @@
             <input type="submit" class="btn btn-default" value="Register" />
         </div>
     </div>
+    
+    @Html.ValidationSummary()
 }
 
 @section Scripts {
